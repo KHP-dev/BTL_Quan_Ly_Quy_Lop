@@ -9,8 +9,7 @@ public class Student {
         super();
     }
 
-    public Student(int _id, String name, String sv_code) {
-        this._id = _id;
+    public Student(String name, String sv_code) {
         this.name = name;
         this.sv_code = sv_code;
     }

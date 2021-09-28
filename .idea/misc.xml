@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AndroidStudioProjects/BTL_Quan_Ly_Quy_Lop/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/BTL_Quan_Ly_Quy_Lop/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/BTL_Quan_Ly_Quy_Lop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25" />
         <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/activity_main.xml" value="0.26469098277608916" />
       </map>
     </option>
