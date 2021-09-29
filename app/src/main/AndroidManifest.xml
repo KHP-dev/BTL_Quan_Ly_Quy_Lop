@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Quan_Ly_Quy_Lop">
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.NoActionBar"
             android:exported="true"
             android:label="@string/app_name">
             <intent-filter>

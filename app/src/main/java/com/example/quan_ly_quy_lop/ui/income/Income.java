@@ -1,4 +1,4 @@
-package com.example.quan_ly_quy_lop.ui.home;
+package com.example.quan_ly_quy_lop.ui.income;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,24 +12,23 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.quan_ly_quy_lop.R;
-import com.example.quan_ly_quy_lop.databinding.FragmentHomeBinding;
+import com.example.quan_ly_quy_lop.databinding.FragmentIncomeBinding;
 
-public class HomeFragment extends Fragment {
+public class Income extends Fragment {
 
-    private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private IncomeViewModel incomeViewModel;
+    private FragmentIncomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        incomeViewModel =
+                new ViewModelProvider(this).get(IncomeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        binding = FragmentIncomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        final TextView textView = binding.textIncome;
+        incomeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

@@ -3,7 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/drawable-v24/dot_green.xml" value="0.3411458333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/drawable/dot.xml" value="0.3411458333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/drawable/home_button.xml" value="0.3416666666666667" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/drawable/home_inactive.xml" value="0.3375" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.5517948717948717" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.34270833333333334" />
         <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/activity_main.xml" value="0.26469098277608916" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/custom_item_expense.xml" value="0.33" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/custom_item_statistics.xml" value="0.33" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/fragment_dashboard.xml" value="0.3255208333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/fragment_expense.xml" value="0.33" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/fragment_home.xml" value="0.3292572463768116" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/fragment_income.xml" value="0.3255208333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/fragment_spend.xml" value="0.3255208333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/home_screen.xml" value="0.3255208333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/income_screen.xml" value="0.3255208333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/layout/spend_screen.xml" value="0.3255208333333333" />
+        <entry key="..\:/learn/lap_trinh_di_dong/Quan_Ly_Quy_Lop/app/src/main/res/menu/bottom_nav_menu.xml" value="0.5442708333333334" />
       </map>
     </option>
   </component>
