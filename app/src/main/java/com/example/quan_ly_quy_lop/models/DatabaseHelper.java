@@ -14,7 +14,6 @@ import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
 import com.example.quan_ly_quy_lop.logUtil.LogUtil;
-import com.example.quan_ly_quy_lop.ui.home.HomeViewModel;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -69,7 +68,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase sqLiteDatabase) {
+    public void onCreate(@NonNull SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(CREATE_TABLE_STUDENT);
         sqLiteDatabase.execSQL(CREATE_TABLE_SESSION);
         sqLiteDatabase.execSQL(CREATE_TABLE_FUND);
@@ -78,7 +77,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+    public void onUpgrade(@NonNull SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_STUDENT);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_SESSION);
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_STUDENT);
@@ -86,6 +85,65 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("DROP TABLE IF EXISTS "+TABLE_EXPENSE);
         onCreate(sqLiteDatabase);
     }
+
+
+
+    @SuppressLint("Range")
+    public float getMoneySession(int id){
+        int count=0;
+        float def_money=0;
+        SQLiteDatabase database = this.getReadableDatabase();
+        String selectQuerry = "SELECT * FROM " + TABLE_SESSION_DETAIL +" WHERE "+ KEY_SESSION_ID +"="+id;
+        String selectQuerry1 = "SELECT * FROM " + TABLE_SESSION +" WHERE "+ KEY_ID +"="+id;
+        LogUtil.LogD(LOG,selectQuerry);
+
+        Cursor c = database.rawQuery(selectQuerry, null);
+        Cursor c1 = database.rawQuery(selectQuerry1, null);
+
+        if (c1 != null) def_money = c1.getFloat(c1.getColumnIndex(KEY_DEF_MONEY));
+        if (c != null) count = c.getCount();
+
+        return def_money*count;
+    }
+
+    @SuppressLint("Range")
+    public float getTotalMoney(){
+        float total_money=0;
+        SQLiteDatabase database = this.getReadableDatabase();
+        String selectQuerry = "SELECT * FROM " + TABLE_SESSION ;
+
+        LogUtil.LogD(LOG,selectQuerry);
+
+        Cursor c = database.rawQuery(selectQuerry, null);
+        if(c!=null) {
+            c.moveToFirst();
+            do{
+                total_money += getMoneySession(c.getInt(c.getColumnIndex(KEY_ID)));
+            } while(c.moveToNext()); // chuyen toi dong tiep theo
+        }
+        return  total_money;
+    }
+
+    @SuppressLint("Range")
+    public float getSurplus(){
+        float surplus=0;
+        float total_expense=0;
+        SQLiteDatabase database = this.getReadableDatabase();
+        String selectQuerry = "SELECT * FROM " + TABLE_EXPENSE ;
+
+        LogUtil.LogD(LOG,selectQuerry);
+
+        Cursor c = database.rawQuery(selectQuerry, null);
+        if(c!=null) {
+            c.moveToFirst();
+            do{
+                total_expense += c.getFloat(c.getColumnIndex(KEY_PRICE));
+            } while(c.moveToNext()); // chuyen toi dong tiep theo
+        }
+
+        return  surplus - total_expense ;
+    }
+
 
 
     // them 1 sudent vao bang students
