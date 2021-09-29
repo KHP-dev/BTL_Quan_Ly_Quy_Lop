@@ -1,15 +1,14 @@
 package com.example.quan_ly_quy_lop.models;
 
 public class Fund {
-    int _id;
-    String name;
+    private int _id;
+    private String name;
 
     public Fund() {
        super();
     }
 
-    public Fund(int _id, String name) {
-        this._id = _id;
+    public Fund( String name) {
         this.name = name;
     }
 

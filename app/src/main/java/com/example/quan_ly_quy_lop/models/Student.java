@@ -1,9 +1,9 @@
 package com.example.quan_ly_quy_lop.models;
 
 public class Student {
-    int _id;
-    String name;
-    String sv_code;
+    private int _id;
+    private String name;
+    private String sv_code;
 
     public Student(){
         super();

@@ -3,17 +3,16 @@ package com.example.quan_ly_quy_lop.models;
 import java.sql.Date;
 
 public class SessionDetail {
-    int _id;
-    Student student;
-    Session session;
-    Date date_create;
+    private int _id;
+    private Student student;
+    private Session session;
+    private Date date_create;
 
     public SessionDetail(){
         super();
     }
 
-    public SessionDetail(int _id, Student student, Session session, Date date_create) {
-        this._id = _id;
+    public SessionDetail( Student student, Session session, Date date_create) {
         this.student = student;
         this.session = session;
         this.date_create = date_create;

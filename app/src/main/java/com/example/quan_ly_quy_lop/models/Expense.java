@@ -3,19 +3,18 @@ package com.example.quan_ly_quy_lop.models;
 import java.sql.Date;
 
 public class Expense {
-    int _id;
-    Fund fund;
-    String title;
-    String des;
-    Float price;
-    Date date_create;
+    private int _id;
+    private Fund fund;
+    private String title;
+    private String des;
+    private Float price;
+    private Date date_create;
 
     public Expense(){
         super();
     }
 
-    public Expense(int _id, Fund fund, String title, String des, Float price, Date date_create) {
-        this._id = _id;
+    public Expense( Fund fund, String title, String des, Float price, Date date_create) {
         this.fund = fund;
         this.title = title;
         this.des = des;
