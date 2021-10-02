@@ -2,7 +2,10 @@ package com.example.quan_ly_quy_lop;
 
 import androidx.annotation.NonNull;
 
-public class XuLyChuoi {
+import java.util.ArrayList;
+import java.util.Calendar;
+
+public class XuLyChung {
     @NonNull
     // Chuẩn hóa tiền từ số sang có chấm Ví dụ: 1000 -> 1.000
     public static String Dot(String input) {
@@ -53,5 +56,20 @@ public class XuLyChuoi {
         }
         breakLine += content;
         return breakLine;
+    }
+
+    @NonNull
+    public static ArrayList<String> CreateListYear () {
+        ArrayList<String> year = new ArrayList<>();
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+
+        year.add("All");
+
+        for (int i = 4; i >= 0; i--) {
+            year.add(String.valueOf(currentYear));
+            currentYear--;
+        }
+
+        return year;
     }
 }

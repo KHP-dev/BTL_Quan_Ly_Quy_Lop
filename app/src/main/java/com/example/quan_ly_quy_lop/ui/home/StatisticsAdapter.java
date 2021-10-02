@@ -9,7 +9,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.quan_ly_quy_lop.R;
-import com.example.quan_ly_quy_lop.XuLyChuoi;
+import com.example.quan_ly_quy_lop.XuLyChung;
 
 import java.util.ArrayList;
 
@@ -67,9 +67,9 @@ public class StatisticsAdapter extends BaseAdapter {
         viewRed.setLayoutParams(params);
 
         txtMonth.setText(statistics.get(i).month);
-        txtIncome.setText(XuLyChuoi.Dot(statistics.get(i).income) + " VNĐ");
-        txtExpense.setText(XuLyChuoi.Dot(statistics.get(i).expense) + " VNĐ");
-        txtBalance.setText(XuLyChuoi.Dot(statistics.get(i).balance) + " VNĐ");
+        txtIncome.setText(XuLyChung.Dot(statistics.get(i).income) + " VNĐ");
+        txtExpense.setText(XuLyChung.Dot(statistics.get(i).expense) + " VNĐ");
+        txtBalance.setText(XuLyChung.Dot(statistics.get(i).balance) + " VNĐ");
 
         return view;
     }

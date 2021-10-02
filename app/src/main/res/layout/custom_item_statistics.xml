@@ -61,8 +61,8 @@
                         android:layout_width="10dp"
                         android:layout_height="10dp"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/dot_green"
-                        android:backgroundTint="#26FF00"/>
+                        android:background="@drawable/dot"
+                        android:backgroundTint="#26FF00" />
 
                 </RelativeLayout>
 
@@ -76,8 +76,8 @@
                         android:layout_width="10dp"
                         android:layout_height="10dp"
                         android:layout_centerInParent="true"
-                        android:background="@drawable/dot_red"
-                        android:backgroundTint="#FF0000"/>
+                        android:background="@drawable/dot"
+                        android:backgroundTint="#FF0000" />
                 </RelativeLayout>
 
             </RelativeLayout>
@@ -100,7 +100,7 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/dot_green"
+                    android:background="@drawable/dot"
                     android:backgroundTint="#26FF00"/>
 
                 <TextView
@@ -131,7 +131,7 @@
                     android:layout_width="10dp"
                     android:layout_height="10dp"
                     android:layout_gravity="center"
-                    android:background="@drawable/dot_red"
+                    android:background="@drawable/dot"
                     android:backgroundTint="#FF0000"/>
 
                 <TextView

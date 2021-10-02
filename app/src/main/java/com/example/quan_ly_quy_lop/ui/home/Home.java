@@ -11,6 +11,8 @@ import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+
+import com.example.quan_ly_quy_lop.XuLyChung;
 import com.example.quan_ly_quy_lop.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
@@ -36,6 +38,9 @@ public class Home extends Fragment {
         year = new ArrayList<>();
         data = new ArrayList<>();
 
+        statisticsAdapter = new StatisticsAdapter(getActivity(), data);
+        lsvStatistics.setAdapter(statisticsAdapter);
+
         initSpinner();
         initListView();
 
@@ -44,14 +49,7 @@ public class Home extends Fragment {
 
     void initSpinner() {
 
-        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-
-        year.add("All");
-
-        for (int i = 4; i >= 0; i--) {
-            year.add(String.valueOf(currentYear));
-            currentYear--;
-        }
+        year.addAll(XuLyChung.CreateListYear());
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, year);
         spnYear.setAdapter(adapter);
@@ -73,8 +71,6 @@ public class Home extends Fragment {
         data.add(new StatisticsModel("Tháng 1", "15000", "25000", "-10000"));
         data.add(new StatisticsModel("Tháng 2", "100000", "20000", "15000"));
         data.add(new StatisticsModel("Tháng 3", "100000", "1000", "100"));
-        statisticsAdapter = new StatisticsAdapter(getActivity(), data);
-        lsvStatistics.setAdapter(statisticsAdapter);
     }
 
     @Override

@@ -3,7 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/container"
     android:layout_width="match_parent"
+    android:background="#D9DAE6"
     android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:src="@drawable/ictu_logo"
+        android:layout_centerInParent="true" />
 
     <fragment
         android:id="@+id/nav_host_fragment_activity_main"

@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.quan_ly_quy_lop.R;
-import com.example.quan_ly_quy_lop.XuLyChuoi;
+import com.example.quan_ly_quy_lop.XuLyChung;
 
 import java.util.ArrayList;
 
@@ -47,8 +47,8 @@ public class ExpenseAdapter extends BaseAdapter {
         TextView txtMoney = view.findViewById(R.id.txtExpenseMoney);
 
         txtDate.setText(expenseModels.get(i).date);
-        txtContent.setText(XuLyChuoi.BreakLine(expenseModels.get(i).content));
-        txtMoney.setText(XuLyChuoi.Dot(expenseModels.get(i).money) + " VNĐ");
+        txtContent.setText(XuLyChung.BreakLine(expenseModels.get(i).content));
+        txtMoney.setText(XuLyChung.Dot(expenseModels.get(i).money) + " VNĐ");
 
         return view;
     }

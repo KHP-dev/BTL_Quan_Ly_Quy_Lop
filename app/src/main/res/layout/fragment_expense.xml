@@ -18,18 +18,44 @@
         android:textColor="@color/chinh"
         android:textStyle="bold"/>
 
+    <RelativeLayout
+        android:id="@+id/rlSpinnerExpense"
+        android:layout_width="105dp"
+        android:layout_height="25dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="5dp"
+        android:layout_below="@+id/txtTitleExpense"
+        android:background="@drawable/box_custom">
+
+        <Spinner
+            android:id="@+id/spnExpense"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/vKe2"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@color/chinh"
+        android:layout_below="@+id/rlSpinnerExpense"/>
+
     <ListView
         android:id="@+id/lsvExpense"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/txtTitleExpense" />
+        android:layout_below="@+id/vKe2"
+        android:layout_marginHorizontal="16dp"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/fabExpense"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
@@ -37,7 +63,7 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:backgroundTint="@color/chinh"
-            android:src="@drawable/plus" />
+            android:src="@drawable/add_white_48dp" />
 
     </RelativeLayout>
 
