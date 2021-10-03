@@ -47,7 +47,7 @@ public class ExpenseAdapter extends BaseAdapter {
         TextView txtMoney = view.findViewById(R.id.txtExpenseMoney);
 
         txtDate.setText(expenseModels.get(i).date);
-        txtContent.setText(XuLyChung.BreakLine(expenseModels.get(i).content));
+        txtContent.setText(expenseModels.get(i).content);
         txtMoney.setText(XuLyChung.Dot(expenseModels.get(i).money) + " VNĐ");
 
         return view;

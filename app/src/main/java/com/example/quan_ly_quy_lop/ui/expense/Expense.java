@@ -1,5 +1,6 @@
 package com.example.quan_ly_quy_lop.ui.expense;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,7 +50,9 @@ public class Expense extends Fragment {
         fabExpense.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddExpense.class);
 
+                startActivity(intent);
             }
         });
 

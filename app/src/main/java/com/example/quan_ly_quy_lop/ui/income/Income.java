@@ -1,5 +1,6 @@
 package com.example.quan_ly_quy_lop.ui.income;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,7 +49,11 @@ public class Income extends Fragment {
         fabIncome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), AddIncome.class);
 
+
+
+                startActivity(intent);
             }
         });
 
