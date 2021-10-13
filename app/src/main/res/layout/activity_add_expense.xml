@@ -112,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:text="Tổng tiền chi:"
+            android:text="Số tiền chi:"
             android:textColor="@color/chinh"
             android:textSize="20dp" />
 

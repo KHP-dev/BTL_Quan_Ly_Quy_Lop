@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Quan_Ly_Quy_Lop">
         <activity
             android:name=".ui.income.Detail_Income"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.NoActionBar"/>
         <activity
             android:name=".ui.expense.AddExpense"
             android:exported="true"

@@ -1,5 +1,8 @@
 package com.example.quan_ly_quy_lop.ui.expense;
 
+import static com.example.quan_ly_quy_lop.XuLyChung.CreateListMonth;
+import static com.example.quan_ly_quy_lop.XuLyChung.CreateListYear;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,7 +16,6 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.quan_ly_quy_lop.XuLyChung;
 import com.example.quan_ly_quy_lop.databinding.FragmentExpenseBinding;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -26,8 +28,10 @@ public class Expense extends Fragment {
     FloatingActionButton fabExpense;
     ListView lsvExpense;
     Spinner spnYear;
+    Spinner spnMonth;
 
     ArrayList<String> year;
+    ArrayList<String> month;
     ArrayList<ExpenseModel> data;
     ExpenseAdapter expenseAdapter;
 
@@ -39,10 +43,12 @@ public class Expense extends Fragment {
 
         lsvExpense = binding.lsvExpense;
         fabExpense = binding.fabExpense;
-        spnYear = binding.spnExpense;
+        spnYear = binding.spnExpenseYear;
+        spnMonth = binding.spnExpenseMonth;
 
         data = new ArrayList<>();
         year = new ArrayList<>();
+        month = new ArrayList<>();
 
         expenseAdapter = new ExpenseAdapter(getActivity(), data);
         lsvExpense.setAdapter(expenseAdapter);
@@ -63,10 +69,14 @@ public class Expense extends Fragment {
     }
 
     void initSpinnerYear() {
-        year.addAll(XuLyChung.CreateListYear());
+        year.addAll(CreateListYear());
+        month.addAll(CreateListMonth());
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, year);
-        spnYear.setAdapter(adapter);
+        ArrayAdapter<String> adapterMonth = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item, month);
+        spnMonth.setAdapter(adapterMonth);
+
+        ArrayAdapter<String> adapterYear = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_dropdown_item, year);
+        spnYear.setAdapter(adapterYear);
 
         spnYear.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override

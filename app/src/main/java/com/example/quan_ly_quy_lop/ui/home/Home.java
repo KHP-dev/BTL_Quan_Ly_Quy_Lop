@@ -12,8 +12,10 @@ import android.widget.Spinner;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import com.example.quan_ly_quy_lop.R;
 import com.example.quan_ly_quy_lop.XuLyChung;
 import com.example.quan_ly_quy_lop.databinding.FragmentHomeBinding;
+import com.example.quan_ly_quy_lop.ui.expense.Expense;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -71,6 +73,13 @@ public class Home extends Fragment {
         data.add(new StatisticsModel("Tháng 1", "15000", "25000", "-10000"));
         data.add(new StatisticsModel("Tháng 2", "100000", "20000", "15000"));
         data.add(new StatisticsModel("Tháng 3", "100000", "1000", "100"));
+
+        lsvStatistics.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+        });
     }
 
     @Override

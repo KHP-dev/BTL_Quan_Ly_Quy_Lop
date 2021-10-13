@@ -51,7 +51,14 @@ public class Income extends Fragment {
             public void onClick(View view) {
                 Intent intent = new Intent(getActivity(), AddIncome.class);
 
+                startActivity(intent);
+            }
+        });
 
+        lsvIncome.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(getActivity(), Detail_Income.class);
 
                 startActivity(intent);
             }

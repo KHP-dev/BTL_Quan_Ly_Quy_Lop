@@ -39,6 +39,18 @@ public class XuLyChung {
         return year;
     }
 
+    @NonNull
+    public static ArrayList<String> CreateListMonth() {
+        ArrayList<String> month = new ArrayList<>();
+        month.add("All");
+
+        for (int i = 1; i <= 12; i ++) {
+            month.add(String.valueOf(i));
+        }
+
+        return month;
+    }
+
     // Check xem EditText có nhập nội dung không
     // Nếu toàn khoảng trắng cũng tính là rỗng
     public static boolean ChuoiRong(String input) {

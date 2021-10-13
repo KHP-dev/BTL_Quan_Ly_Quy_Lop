@@ -30,6 +30,7 @@
                 android:id="@+id/txtExpenseContent"
                 android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:cursorVisible="false"
                 android:inputType="textMultiLine"
                 android:text="Mua quà cho thầyyyyy"
                 android:textColor="@color/chinh"
