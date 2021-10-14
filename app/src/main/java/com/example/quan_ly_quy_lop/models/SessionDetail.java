@@ -1,6 +1,7 @@
 package com.example.quan_ly_quy_lop.models;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 public class SessionDetail {
     private int _id;

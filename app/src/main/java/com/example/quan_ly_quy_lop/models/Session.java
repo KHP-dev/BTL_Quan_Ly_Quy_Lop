@@ -1,12 +1,13 @@
 package com.example.quan_ly_quy_lop.models;
 
-import java.sql.Date;
+
+import java.util.Date;
 
 public class Session {
     private   int _id;
     private String name;
     private Fund fund;
-    private Float def_money;
+    private float def_money;
     private Date date_begin;
     private Date date_end;
 
@@ -14,7 +15,7 @@ public class Session {
         super();
     }
 
-    public Session(String name, Fund fund, Float def_money, Date date_begin, Date date_end) {
+    public Session(String name, Fund fund, float def_money, Date date_begin, Date date_end) {
         this.fund = fund;
         this.name = name;
         this.def_money = def_money;
@@ -44,11 +45,11 @@ public class Session {
         this.fund = fund;
     }
 
-    public Float getDef_money() {
+    public float getDef_money() {
         return def_money;
     }
 
-    public void setDef_money(Float def_money) {
+    public void setDef_money(float def_money) {
         this.def_money = def_money;
     }
 

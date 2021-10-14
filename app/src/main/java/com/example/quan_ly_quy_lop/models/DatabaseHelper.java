@@ -252,9 +252,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Fund getFund(int id) {
         // cap quyen doc CSDL cho bien database
         SQLiteDatabase database = this.getReadableDatabase();
-        // gan cau lenh SQL vao bien selectQuerry
+        // gan cau lenh SQL vao bien selectQuery
         String selectQuery = "SELECT * FROM " + TABLE_FUND + " WHERE " + KEY_ID + " = " + id;
-        // Log ra selectQuerry
+        // Log ra selectQuery
         LogUtil.LogD(LOG, selectQuery);
         // doi tuong luu cac hang cua bang truy van
         Cursor c = database.rawQuery(selectQuery, null);
@@ -276,9 +276,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Session getSession(int id) {
         // cap quyen doc CSDL cho bien database
         SQLiteDatabase database = this.getReadableDatabase();
-        // gan cau lenh SQL vao bien selectQuerry
+        // gan cau lenh SQL vao bien selectQuery
         String selectQuery = "SELECT * FROM " + TABLE_SESSION + " WHERE " + KEY_ID + " = " + id;
-        // Log ra selectQuerry
+        // Log ra selectQuery
         LogUtil.LogD(LOG, selectQuery);
         // doi tuong luu cac hang cua bang truy van
         Cursor c = database.rawQuery(selectQuery, null);
@@ -370,11 +370,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<Student> arrStudent = new ArrayList<Student>();
 
         SQLiteDatabase database = this.getReadableDatabase();
-        String selectQuerry = "SELECT * FROM " + TABLE_STUDENT;
+        String selectQuery = "SELECT * FROM " + TABLE_STUDENT;
 
-        LogUtil.LogD(LOG,selectQuerry);
+        LogUtil.LogD(LOG,selectQuery);
 
-        Cursor c = database.rawQuery(selectQuerry, null);
+        Cursor c = database.rawQuery(selectQuery, null);
 
         if(c!=null) {
             c.moveToFirst();
@@ -393,6 +393,32 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         // tra ve danh sach cac student
         return arrStudent;
     }
+    // lay thong tin tat ca fund ra tu CSDL
+    @SuppressLint("Range")
+    public ArrayList<Fund> getAllFund() {
+        ArrayList<Fund> arrFund = new ArrayList<Fund>();
+
+        SQLiteDatabase database = this.getReadableDatabase();
+        String selectQuery = "SELECT * FROM " + TABLE_FUND;
+
+        LogUtil.LogD(LOG,selectQuery);
+
+        Cursor c = database.rawQuery(selectQuery, null);
+
+        if(c!=null) {
+            c.moveToFirst();
+            do{
+                // dong goi thong tin vao 1 doi tuong fund
+                Fund fund = new Fund();
+                fund.set_id(c.getInt(c.getColumnIndex(KEY_ID)));
+                fund.setName(c.getString(c.getColumnIndex(KEY_NAME)));
+                arrFund.add(fund);
+            } while(c.moveToNext()); // chuyen toi dong tiep theo
+        }
+
+        // tra ve danh sach cac fund
+        return arrFund;
+    }
 
     // lay thong tin tat ca session ra tu CSDL
     @SuppressLint("Range")
@@ -400,11 +426,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<Session> arrSession = new ArrayList<Session>();
 
         SQLiteDatabase database = this.getReadableDatabase();
-        String selectQuerry = "SELECT * FROM " + TABLE_SESSION;
+        String selectQuery = "SELECT * FROM " + TABLE_SESSION;
 
-        LogUtil.LogD(LOG,selectQuerry);
+        LogUtil.LogD(LOG,selectQuery);
 
-        Cursor c = database.rawQuery(selectQuerry, null);
+        Cursor c = database.rawQuery(selectQuery, null);
 
         if(c!=null) {
             c.moveToFirst();

@@ -8,6 +8,9 @@ import android.widget.Toast;
 
 import com.example.quan_ly_quy_lop.logUtil.LogUtil;
 import com.example.quan_ly_quy_lop.models.DatabaseHelper;
+import com.example.quan_ly_quy_lop.models.Fund;
+import com.example.quan_ly_quy_lop.models.Session;
+import com.example.quan_ly_quy_lop.models.SessionDetail;
 import com.example.quan_ly_quy_lop.models.Student;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,6 +23,7 @@ import androidx.navigation.ui.NavigationUI;
 import com.example.quan_ly_quy_lop.databinding.ActivityMainBinding;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
     private DatabaseHelper dbHelper;
@@ -45,12 +49,23 @@ public class MainActivity extends AppCompatActivity {
 
         // test data base
         dbHelper = new DatabaseHelper(MainActivity.this);
-        Student student = new Student("Manh Hung", "Ha Dong");
+        Student student = new Student("kim","123");
+        Fund fund = new Fund("k17h");
         dbHelper.insertStudent(student);
-        student = new Student("Tuan Anh", "Cau Giay");
-        dbHelper.insertStudent(student);
-        ArrayList<Student> arrStudent = dbHelper.getAllStudent();
-        LogUtil.LogD("dataStudent",arrStudent.get(0).getName());
+        dbHelper.insertFund(fund);
+
+        Fund fund1 = dbHelper.getAllFund().get(0);
+        Session session = new Session("ql1",fund1,12,new Date(), new Date());
+        dbHelper.insertSession(session);
+
+        Student student1 = dbHelper.getAllStudent().get(0);
+        Session session1 = dbHelper.getAllSession().get(0);
+        SessionDetail sessionDetail = new SessionDetail(student1,session1,new Date());
+        dbHelper.insertSessionDetail(sessionDetail);
+
+        LogUtil.LogD("dataStudent",dbHelper.getAllStudent().get(0).getName());
+        LogUtil.LogD("dataSession",dbHelper.getAllSession().get(0).getName());
+        LogUtil.LogD("dataSessionDetail",dbHelper.getAllSessionDetail().get(0).getSession().getName());
 
 
     }
