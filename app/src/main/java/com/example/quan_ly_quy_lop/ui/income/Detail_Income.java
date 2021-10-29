@@ -25,8 +25,8 @@ public class Detail_Income extends AppCompatActivity {
 
     TextView txtTitle;
     TextView txtMoney;
-    TextView txtDaThu;
-    TextView txtChuaThu;
+//    TextView txtDaThu;
+//    TextView txtChuaThu;
     TableLayout tblListPeople;
 
     ArrayList<Detail_IncomeModel> data;
@@ -43,8 +43,8 @@ public class Detail_Income extends AppCompatActivity {
 
         txtTitle = findViewById(R.id.txtTitleDetailIncome);
         txtMoney = findViewById(R.id.txtMoneyPP);
-        txtDaThu = findViewById(R.id.txtDaThu);
-        txtChuaThu = findViewById(R.id.txtChuaThu);
+//        txtDaThu = findViewById(R.id.txtDaThu);
+//        txtChuaThu = findViewById(R.id.txtChuaThu);
         tblListPeople = findViewById(R.id.tblListPeople);
 
         dialog = new AlertDialog.Builder(this).create();
@@ -59,8 +59,8 @@ public class Detail_Income extends AppCompatActivity {
             idIncome = bd.getString("id");
             txtTitle.setText("Từ ngày " + bd.get("date"));
             txtMoney.setText("Số tiền thu mỗi người: " + money + " VNĐ");
-            txtDaThu.setText("Đã thu: ");
-            txtChuaThu.setText("Chưa thu: ");
+//            txtDaThu.setText("Đã thu: ");
+//            txtChuaThu.setText("Chưa thu: ");
         }
 
         init();
